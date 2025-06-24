@@ -1,0 +1,58 @@
+<footer>
+  <!-- Main -->
+  <section class="bg-teal-100 h-[400px]">
+    <!-- Title-->
+    <section class=" flex justify-center text-2xl ">
+      <h1 class="mt-10">{{logoTitle}}</h1>
+      <div class="h-1 w-96 border bg-black mt-[55px] "></div>
+    </section>
+
+    <!-- Big-->
+    <section class="flex justify-center mt-[100px] space-x-16">
+      <!--1-->
+      <section>
+        <ul>
+          <li class="hover:text-gray-400 cursor-pointer"*ngFor="let items of menuItems">
+            {{items}}
+          </li>
+        </ul>
+      </section>
+
+      <!--2-->
+      <section>
+        <ul>
+          <li class="hover:text-gray-400 cursor-pointer" *ngFor="let items1 of menuItems1">
+            {{items1}}
+          </li>
+        </ul>
+      </section>
+
+      <!--3-->
+      <section>
+        <ul>
+          <li class="hover:text-gray-400 cursor-pointer" *ngFor="let item2 of menuItems2">
+            {{item2}}
+          </li>
+        </ul>
+      </section>
+
+      <!--4-->
+      <section class=" flex flew-wrap flex-col">
+
+        <h5>{{followUS}}</h5>
+        <!-- Button1 -->
+        <button class="border h-10 w-[250px] border-black mt-5 hover:border-4">{{enterEMail}}</button>
+
+        <!-- Button 2 -->
+        <button class="border h-10 w-[250px] border-black mt-2 font-bold hover:bg-green-950 hover:text-white ">{{followNow}} </button>
+
+      </section>
+
+    </section>
+
+  </section>
+  <!--Bottom-->
+  <section>
+    <h2 class="flex justify-center">{{footerH5}}</h2>
+  </section>
+</footer>
