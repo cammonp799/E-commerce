@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './hero-carrousel.component.scss'
 })
 export class HeroCarrouselComponent {
-
+clothes = 'VÊTEMENTS POUR FEMMES'
 }
