@@ -1,24 +1,24 @@
-// karma.conf.js
+// frontend/karma.conf.js
 process.env.CHROME_BIN = require('puppeteer').executablePath();
 
-module.exports = function (config) {
+module.exports = (config) => {
   config.set({
-    // ... garde tes settings existants (frameworks, files, reporters, coverage, etc.)
+    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    plugins: [
+      require('karma-jasmine'),
+      require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage'),
+      require('@angular-devkit/build-angular/plugins/karma'),
+      require('@angular/build/plugins/karma'),
+    ],
     browsers: ['ChromeHeadlessCI'],
     customLaunchers: {
       ChromeHeadlessCI: {
         base: 'ChromeHeadless',
-        flags: [
-          '--no-sandbox',
-          '--disable-setuid-sandbox',
-          '--disable-gpu',
-          '--disable-dev-shm-usage',
-        ],
+        flags: ['--no-sandbox','--disable-setuid-sandbox','--disable-gpu','--disable-dev-shm-usage'],
       },
     },
-    singleRun: true,           // important en CI (pas de watch)
-    // builder selon ta version d’Angular :
-    // Angular 18 -> builder @angular-devkit/build-angular
-    // Angular 20 -> builder @angular/build
+    singleRun: true,
   });
 };
